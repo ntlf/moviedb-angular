@@ -1,0 +1,13 @@
+<div *ngIf="movie">
+  <img *ngIf="movie.imageUrl" class="movie-poster" [src]="movie.imageUrl">
+
+  <b>{{movie.title}}</b> 
+  
+  <p>{{movie.wikiText}}</p>
+
+  <div>
+    <a *ngIf="movie.wikiId" target="_blank" [href]="'http://en.wikipedia.org/?curid=' + movie.wikiId">Wikipedia</a>
+    <a *ngIf="movie.imdbId" target="_blank" [href]="'http://www.imdb.com/title/' + movie.imdbId">IMDb</a>
+  </div>
+
+</div>

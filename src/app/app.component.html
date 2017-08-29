@@ -1,0 +1,26 @@
+<div>
+  <div class="movie-search">
+    <h2>MovieDb</h2>
+    <input #inputText placeholder="movie title" (keyup.enter)="searchMovies(inputText.value)">
+  </div>
+
+  <div class="movie-results">
+    <div class="movie-list">
+      <div *ngIf="!isLoadingMovies; else loading">
+        <div *ngIf="movies !== undefined && !movies[0]">nothing found</div>
+        <div *ngFor="let movie of movies" class="movie-item">
+          <span class="movie-title" (click)="getMovieDetails(movie)">{{movie.title}}</span>
+          <i>{{movie.date}}</i>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-detail">
+      <div *ngIf="!isLoadingDetails; else loading">
+        <app-movie-detail [movie]="selectedMovie"></app-movie-detail>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loading>loading...</ng-template>
+</div>

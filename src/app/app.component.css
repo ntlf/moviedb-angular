@@ -1,0 +1,26 @@
+.movie-search {
+    text-align: center; 
+    padding-bottom: 20px;
+}
+
+.movie-item {
+    margin: 5px;
+}
+
+.movie-title {
+    cursor: pointer;
+}
+
+.movie-results {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center
+}
+
+.movie-list {
+    width: 360px; 
+}
+
+.movie-detail {
+    width: 720px;
+}
